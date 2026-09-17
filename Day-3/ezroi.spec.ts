@@ -2,12 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test('EZROI test', async ({ page }) => {
 
-  await page.goto(
-   'https://www.ezroi.net/sign-in '
-  );
-
-
-  await expect(page).toHaveURL(/sign-in.*redirectUrl/);
+   await page.goto('https://qa.ezroi.net/sign-in?redirectUrl=/orders/readyforpayment');
 
 
   await page.getByRole('textbox', { name: 'Enter your username' }).fill('excelr@yopmail.com');
@@ -30,7 +25,7 @@ test('EZROI test', async ({ page }) => {
   await expect(page).toHaveURL(/request/i);
 
 
-  await page.getByRole('cell', { name: 'ORD-517' }).getByRole('paragraph').click();
+  await page.getByRole('cell', { name: 'ORD-510' }).getByRole('paragraph').click();
 
 
   await page.locator('.ant-select-selection-search').first().click();

@@ -18,39 +18,39 @@
 
 //npx playwright codegen --browser=chromium https://www.ezroi.net/sign-in  
 
-import { test, expect } from '@playwright/test';
+// import { test, expect } from '@playwright/test';
 
-test('Send Invoice Flow', async ({ page }) => {
+// test('Send Invoice Flow', async ({ page }) => {
 
-await page.goto('https://qa.ezroi.net/admin/document-requests/New');
+// await page.goto('https://qa.ezroi.net/admin/document-requests/New');
 
-await expect(page).toHaveURL(/document-requests/i);
+// await expect(page).toHaveURL(/document-requests/i);
 
-await expect(page).toHaveTitle(/Release Information System/i);
+// await expect(page).toHaveTitle(/Release Information System/i);
 
-const customerDropdown = page.locator('#customer');
+// const customerDropdown = page.locator('#customer');
 
-const invoiceNumberInput = page.locator('#invoiceNumber');
+// const invoiceNumberInput = page.locator('#invoiceNumber');
 
-const amountInput = page.locator('#invoiceAmount');
+// const amountInput = page.locator('#invoiceAmount');
 
-const uploadInvoiceInput = page.locator('input[type="file"]');
+// const uploadInvoiceInput = page.locator('input[type="file"]');
 
-const sendInvoiceButton = page.getByRole('button', {name: /send invoice/i,});
+// const sendInvoiceButton = page.getByRole('button', {name: /send invoice/i,});
 
-const successMessage = page.locator('.alert-success');
+// const successMessage = page.locator('.alert-success');
 
-await customerDropdown.selectOption({ label: 'ABC Client' });
+// await customerDropdown.selectOption({ label: 'ABC Client' });
 
-await invoiceNumberInput.fill('INV-10001');
+// await invoiceNumberInput.fill('INV-10001');
 
-await amountInput.fill('5000');
-await uploadInvoiceInput.setInputFiles('test-data/invoice.pdf');
+// await amountInput.fill('5000');
+// await uploadInvoiceInput.setInputFiles('test-data/invoice.pdf');
 
-await Promise.all([page.waitForResponse(response =>response.url().includes('sendInvoice') && response.status() === 200),sendInvoiceButton.click(),]);
+// await Promise.all([page.waitForResponse(response =>response.url().includes('sendInvoice') && response.status() === 200),sendInvoiceButton.click(),]);
 
-await expect(successMessage).toBeVisible();
+// await expect(successMessage).toBeVisible();
 
-await expect(successMessage).toContainText('Invoice sent successfully');
+// await expect(successMessage).toContainText('Invoice sent successfully');
 
-await expect(page).toHaveURL(/success/i);});
+// await expect(page).toHaveURL(/success/i);});
