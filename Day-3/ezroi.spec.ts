@@ -1,9 +1,9 @@
 import { test, expect } from '@playwright/test';
 
-test('EZROI - Ready for Payment to Invoice Finalization', async ({ page }) => {
+test('EZROI test', async ({ page }) => {
 
   await page.goto(
-    'https://qa.ezroi.net/sign-in?redirectUrl=/orders/readyforpayment'
+   'https://www.ezroi.net/sign-in '
   );
 
 
